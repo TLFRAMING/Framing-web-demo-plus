@@ -11,6 +11,27 @@ nav {display:flex;justify-content:space-between;padding:15px;background:#000;pos
 nav a {color:#fff;margin-left:15px;text-decoration:none;}
 .call-btn {background:#FFD700;padding:8px 12px;color:#000;border-radius:5px;}
 
+.call-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  background: linear-gradient(135deg, #f4b400, #ffcc00);
+  color: #000;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 999;
+  animation: pulse 2s infinite;
+}
+
+/* 呼吸动画 */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 204, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+}
 .hero {
   height:100vh;
   background:url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") center/cover;
@@ -70,7 +91,11 @@ button {padding:12px;background:#FFD700;border:none;}
 </head>
 
 <body>
-
+<div class="cta-group">
+  <a href="#quote" class="quote-btn">获取报价</a>
+  <a href="tel:+1306XXXXXXX" class="call-btn-inline">立即致电</a>
+</div>
+  
 <nav>
   <div>Framing demo</div>
   <div>
