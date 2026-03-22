@@ -216,19 +216,17 @@ form button {
 
 <!-- ===== QUOTE ===== -->
 <section id="quote" class="fade">
-  <h2>Get a Quote</h2>
-
-  <!-- FormSubmit -->
-  <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <input type="email" name="email" placeholder="Email Address" required> 
-    <textarea name="message" placeholder="Project Details"></textarea>
-
-    <!-- 防垃圾邮件 -->
-    <input type="hidden" name="_captcha" value="false">
-
-    <button type="submit">Send Request</button>
+<h2>Request a Free Quote</h2>
+<div class="quote-form">
+<form action="https://formsubmit.co/info@framingdemo.ca" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Quote Request">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Email Address" required>
+<input type="text" name="phone" placeholder="Phone Number" required>
+<textarea name="message" placeholder="Project Details"></textarea>
+<input type="file" name="attachment">
+<button type="submit">Submit</button>
   </form>
 </section>
 
