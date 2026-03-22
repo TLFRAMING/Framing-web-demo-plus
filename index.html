@@ -3,178 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Framing Demo</title>
+<title>TL PRO Framing</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+body {margin:0;font-family:Arial;background:#111;color:#fff;}
+nav {display:flex;justify-content:space-between;padding:15px;background:#000;position:fixed;width:100%;}
+nav a {color:#fff;margin-left:15px;text-decoration:none;}
+.call-btn {background:#FFD700;padding:8px 12px;color:#000;border-radius:5px;}
 
-body {
-  background: #111;
-  color: white;
-}
-
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background: rgba(0,0,0,0.8);
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-}
-
-nav h1 {
-  color: #FFD700;
-}
-
-nav a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
-}
-
-/* HERO */
 .hero {
-  height: 100vh;
-  background: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  height:100vh;
+  background:url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") center/cover;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;
 }
 
-.hero h2 {
-  font-size: 50px;
-  animation: fadeIn 2s ease;
+.hero h1 {font-size:48px;}
+.hero a {
+  margin-top:20px;
+  background:#FFD700;
+  padding:12px 20px;
+  color:#000;
+  text-decoration:none;
+  border-radius:5px;
 }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
-}
+.section {padding:80px 20px;text-align:center;}
 
-/* SECTION */
-.section {
-  padding: 80px 20px;
-  text-align: center;
-}
+.projects {display:flex;overflow-x:auto;gap:20px;}
+.project {min-width:300px;height:200px;background-size:cover;border-radius:10px;}
 
-/* PROJECTS */
-.projects {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px;
-}
+form {max-width:500px;margin:auto;display:flex;flex-direction:column;}
+input, textarea {margin:10px 0;padding:10px;border-radius:5px;border:none;}
+button {padding:12px;background:#FFD700;border:none;}
 
-.project {
-  min-width: 300px;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.project:hover {
-  transform: scale(1.1);
-}
-
-/* FORM */
-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-input, textarea {
-  margin: 10px 0;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-}
-
-button {
-  padding: 12px;
-  background: #FFD700;
-  border: none;
-  cursor: pointer;
-}
-
-/* ANIMATION ON SCROLL */
-.hidden {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s;
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+.testimonials {max-width:800px;margin:auto;}
+.testimonial {margin:20px 0;font-style:italic;}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <h1>Framing Demo</h1>
+  <div>TL PRO Framing</div>
   <div>
+    <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#quote">Quote</a>
+    <a href="tel:306-XXX-XXXX" class="call-btn">📞 Call Now</a>
   </div>
 </nav>
 
 <section class="hero">
-  <h2>Professional Framing Services</h2>
+  <h1>Professional Framing Services</h1>
+  <p>Reliable • Fast • Professional</p>
+  <a href="tel:306-XXX-XXXX">📞 Call Now</a>
 </section>
 
-<section id="services" class="section hidden">
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>We are a professional framing team based in Saskatoon, specializing in residential and commercial projects. Quality work and fast turnaround guaranteed.</p>
+</section>
+
+<section id="services" class="section">
   <h2>Our Services</h2>
   <p>House Framing • Garage • Basement • Renovation</p>
 </section>
 
-<section id="projects" class="section hidden">
+<section id="projects" class="section">
   <h2>Projects</h2>
   <div class="projects">
     <div class="project" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e')"></div>
-    <div class="project" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e8c2a2e8b3b')"></div>
     <div class="project" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd')"></div>
   </div>
 </section>
 
-<section id="quote" class="section hidden">
-  <h2>Get a Quote</h2>
-
-  <!-- 替换成你的 Formspree ID -->
-  <form action="https://formspree.io/f/YOUR_ID" method="POST" enctype="multipart/form-data">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Project details"></textarea>
-    <input type="file" name="file">
-    <button type="submit">Submit</button>
-  </form>
+<section class="section">
+  <h2>Customer Reviews</h2>
+  <div class="testimonials">
+    <div class="testimonial">"Great work, very professional and fast!"</div>
+    <div class="testimonial">"Highly recommend, quality framing!"</div>
+  </div>
 </section>
 
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-});
+<section id="quote" class="section">
+  <h2>Get a Quote</h2>
 
-document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
-</script>
+  <form action="https://formsubmit.co/你的邮箱@gmail.com" method="POST" enctype="multipart/form-data">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <input type="text" name="phone" placeholder="Phone Number" required>
+
+    <textarea name="message" placeholder="Project details"></textarea>
+
+    <input type="file" name="attachment">
+
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">Submit</button>
+
+  </form>
+</section>
 
 </body>
 </html>
